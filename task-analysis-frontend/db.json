@@ -1,0 +1,18 @@
+{
+  "password": [
+    {
+      "id": 1,
+      "pwd": "hoii"
+    },
+    {
+      "username": "admin",
+      "password": "U2FsdGVkX185Tbpyq8NsrH6YQmx2ZAoVtl4SCgKBmxs=",
+      "id": 5
+    },
+    {
+      "email": "raj@test.com",
+      "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "id": 6
+    }
+  ]
+}
