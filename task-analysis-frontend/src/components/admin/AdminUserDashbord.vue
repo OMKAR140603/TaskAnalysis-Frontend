@@ -15,7 +15,10 @@
 <td>{{ user.emp_id }}</td>
 <td>{{  user.name}}</td>
 <td>{{  user.email}}</td>
-<td><router-link :to="/employees/+user.emp_id">update</router-link></td>
+<td><router-link :to="/employees/+user.emp_id">update</router-link>/
+<router-link :to="/employee/+user.emp_id"><button>delete</button></router-link>
+
+</td>
 </tr>
 </table>
 
@@ -32,7 +35,7 @@ export default {
             //default data which you need to be kept
             acc_tkn: sessionStorage.getItem("access_token"),
             usernames: [], //usernames coming from adminAddUserComponent
-            sample2: [1,2,3,4]
+          
         }
     },
     components: {
@@ -43,18 +46,13 @@ export default {
             //inside the sample function
         },
         async getUsersData() {
-            //this functionality wont work as this route is not added till now 
-            await axios.get("https://b11f-210-16-95-84.ngrok-free.app/employee", {timeout:10000},{
-                headers: {
-                    // "Accept": "text/html",
-                   "content-type" : "text/html",
-                    "Access-Control-Allow-Origin": "http://localhost:3005",
-                    "Authorization ": " Bearer " + this.acc_tkn.toString()
-
+           
+            await axios.get("https://bda8-210-16-94-134.ngrok-free.app/employee",{
+                headers:{
+                    "Access-Control-Allow-Origin": "http://localhost:3012/",   
                 }
             }).then((response) => {
                 console.log(response)
-
                 this.usernames = response.data.map(user => ({
           emp_id: user.emp_id,
           name: user.username,
@@ -64,6 +62,18 @@ export default {
         console.log(this.usernames)
         
             }).catch((error) => { console.log(error) })
+        },
+        async deleteUser(){
+          const response =  await axios.delete("https://6edc-210-16-95-84.ngrok-free.app/employee/4",{
+                headers: {
+                        "Authorization ": " Bearer " + this.acc_tkn.toString()
+                    }
+            })
+            console.log(response.data)
+            if(response.status==200){
+                alert("user deleted!!!")
+                this.$router.push("/employees")
+            }
         }
 
     },

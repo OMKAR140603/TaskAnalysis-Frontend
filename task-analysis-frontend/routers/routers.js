@@ -1,9 +1,10 @@
 import SignInComponent from "@/components/authentication/SignInComponent.vue";
 import AdminDashbordComponent from "../src/components/admin/AdminDashbordComponent.vue"
 import AdminUserDashbord from "../src/components/admin/AdminUserDashbord.vue"
-import TasksComponent from "../src/components/admin/TasksComponent.vue"
+import TasksComponent from "../src/components/admin/admininvestigations/TasksComponent.vue"
 import AdminAddUser from "@/components/admin/AdminAddUser.vue";
 import AdminUsersUpdate from  "../src/components/admin/AdminUserUpdate.vue"
+import AdminUsersDelete from "../src/components/admin/UserDeleted.vue"
 import {createRouter,createWebHistory} from "vue-router"
 const routes=[
     
@@ -103,6 +104,24 @@ const routes=[
             }
         }
     },
+    {
+        //this route is for the admin to update the users information
+        name:"adminusersinfodelete",
+        component:AdminUsersDelete,
+        path:"/employee/:id",
+        beforeEnter: (to, from, next) => {
+            // ...
+            const acc_tkn = sessionStorage.getItem("access_token")
+            if(acc_tkn){
+                // User is authenticated, allow access to the route
+                next()
+            }
+            else{
+                // User is not authenticated, redirect to the login page
+                next("/")
+            }
+        }
+    }
 ];
 
 const router =createRouter(

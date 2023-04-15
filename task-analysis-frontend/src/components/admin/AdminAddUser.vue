@@ -73,7 +73,7 @@
                     //omkar and 123
     
                 }
-                await axios.post("https://b11f-210-16-95-84.ngrok-free.app/employee", user_data, {
+                await axios.post("https://bda8-210-16-94-134.ngrok-free.app/employee", user_data, {
                     headers: {
                         "Authorization ": " Bearer " + this.acc_tkn.toString()
                     }

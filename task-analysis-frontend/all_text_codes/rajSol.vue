@@ -1,12 +1,13 @@
 <template>
     <h1>form for the adding user</h1>
        
-        <button v-on:click="fetchData()">getUser</button>
+        <button v-on:click="func()">getUser</button>
         </template>
         
             
         <script>
         import axios from "axios"
+
       
         export default {
             name: "AdminUserDashbordComponent",
@@ -25,29 +26,26 @@
             components: {
                 //imported components name here
             },
-            methods: {
-                sample() {
-                    //inside the sample function
-                },
-                async  fetchData() {
-  const url = 'https://b11f-210-16-95-84.ngrok-free.app/employee';
-  const header = {
-  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODEzMDAzNzksInN1YiI6InJhakBnbWFpbC5jb20ifQ.gWhu5bV7yrxrbE3Tj7ATZf10zzqh1vC11-eKFjtHuBY',
-  
-  };
-  try {
-    const response = await axios.get(url, { headers: header });
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
+            methods:{
+   async func(){
+
+ const result= await  axios.get("https://6edc-210-16-95-84.ngrok-free.app/employee/me",{
+    headers:{
+        Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODE0OTM3MDQsInN1YiI6InRlc3RAZ21haWwuY29tIn0.1Bhx3UDuqWP2QpFmKSypSqHIKIAZxvc6EWs7Rr2OPnM",
+        "Access-Control-Allow-Origin": "http://localhost:3009",
+        "Content-Type" : null
+    }
+  })
+  console.log(result.data)
+   
   }
-}
-                
-        
             },
             props: {
                 //sending one data to another component
-            }
+            },
+            async mounted() {
+
+}
         }
         </script>
             

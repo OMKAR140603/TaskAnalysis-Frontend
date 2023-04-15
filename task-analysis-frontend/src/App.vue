@@ -1,19 +1,22 @@
 <template>
 
-<!-- <router-view ></router-view> -->
+<router-view ></router-view>
 <!-- <hashPassVue></hashPassVue> -->
-<rajSolVue></rajSolVue>
+<!-- <rajSolVue></rajSolVue> -->
+<!-- <testingCompo></testingCompo> -->
 </template>
 
 <script>
 
 // import hashPassVue from '../all_text_codes/hashPass.vue';
-import rajSolVue from '../all_text_codes/rajSol.vue';
+// import rajSolVue from '../all_text_codes/rajSol.vue';
+// import testingCompo from "../src/components/authentication/testingCompo.vue"
 export default {
   name: 'App',
   components: {
   //  hashPassVue
-  rajSolVue
+  // rajSolVue
+  // testingCompo
   }
 }
 </script>
