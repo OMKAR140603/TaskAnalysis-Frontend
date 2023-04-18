@@ -54,7 +54,7 @@ export default {
                     'Authorization': 'Bearer ' + this.acc_tkn.toString() // replace this with your actual token value
                 }
             }
-            const res = await axios.put("https://bda8-210-16-94-134.ngrok-free.app/employee/" + this.$route.params.id,
+            const res = await axios.put("https://b3cf-210-16-95-85.ngrok-free.app/api/team-member/" + this.$route.params.id,
                 this.usernames, config)
             if (res.status == 200) {
                 alert("updated successfully!!")
@@ -64,7 +64,7 @@ export default {
     },
     async mounted() {
         try {
-            const result = await axios.get("https://bda8-210-16-94-134.ngrok-free.app/employee/" + this.$route.params.id, {
+            const result = await axios.get("https://b3cf-210-16-95-85.ngrok-free.app/api/team-member/" + this.$route.params.id, {
                 headers: {
                     // "Accept": "text/html",
                     "content-type": "text/html",

@@ -19,6 +19,7 @@
   import crypto from 'crypto';
   import axios from 'axios';
 
+
   
   export default {
       name: 'LoginForm',
@@ -35,10 +36,10 @@
           handleSubmit() {
               const hashPassword = crypto.createHash('sha256').update(this.password).digest('hex')
               console.log(hashPassword)
-              axios.post('https://bda8-210-16-94-134.ngrok-free.app/login', {
+              axios.post('https://b3cf-210-16-95-85.ngrok-free.app/api/login', {
                       username: this.username,
                       password: hashPassword,
-                      "Access-Control-Allow-Origin": "http://localhost:3010/",
+                      "Access-Control-Allow-Origin": "http://localhost:3012/",
                   }).then((response) => {
                       try {
                           if (response.status === 200 && response.data.is_admin == true ) {

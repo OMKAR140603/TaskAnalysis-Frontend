@@ -16,7 +16,7 @@ export default {
     },
     methods:{
         async deleteUser(){
-            const response =  await axios.delete("https://bda8-210-16-94-134.ngrok-free.app/employee/"+this.$route.params.id,{
+            const response =  await axios.delete("https://b3cf-210-16-95-85.ngrok-free.app/api/team-member/"+this.$route.params.id,{
                 headers: {
                         "Authorization ": " Bearer " + this.acc_tkn.toString()
                     }

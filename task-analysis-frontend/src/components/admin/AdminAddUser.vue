@@ -38,6 +38,7 @@
     import axios from "axios"
    
     import crypto from 'crypto';
+   // axios.defaults.baseURL = '/api/';
     export default {
         name: "AdminUserDashbordComponent",
         data() {
@@ -73,7 +74,7 @@
                     //omkar and 123
     
                 }
-                await axios.post("https://bda8-210-16-94-134.ngrok-free.app/employee", user_data, {
+                await axios.post("https://b3cf-210-16-95-85.ngrok-free.app/api/team-member", user_data, {
                     headers: {
                         "Authorization ": " Bearer " + this.acc_tkn.toString()
                     }

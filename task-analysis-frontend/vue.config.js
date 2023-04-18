@@ -1,8 +1,5 @@
-const { defineConfig } = require('@vue/cli-service')
-
-module.exports = defineConfig({
+module.exports = {
   transpileDependencies: true,
-
   configureWebpack: {
     resolve: {
       fallback: {
@@ -11,4 +8,15 @@ module.exports = defineConfig({
       },
     },
   },
-})
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://84d3-210-16-94-134.ngrok-free.app/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  }
+};

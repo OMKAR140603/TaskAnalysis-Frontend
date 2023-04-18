@@ -26,7 +26,7 @@
 
 <script>
 import axios from "axios"
-
+//axios.defaults.baseURL = 'https://84d3-210-16-94-134.ngrok-free.app/';
 export default {
 
     name: "AdminUserDashbordComponent",
@@ -47,12 +47,8 @@ export default {
         },
         async getUsersData() {
            
-            await axios.get("https://bda8-210-16-94-134.ngrok-free.app/employee",{
-                headers:{
-                    "Access-Control-Allow-Origin": "http://localhost:3012/",   
-                }
-            }).then((response) => {
-                console.log(response)
+            await axios.get("https://b3cf-210-16-95-85.ngrok-free.app/api/team-member").then((response) => {
+                console.log(JSON.stringify(response.data));
                 this.usernames = response.data.map(user => ({
           emp_id: user.emp_id,
           name: user.username,
