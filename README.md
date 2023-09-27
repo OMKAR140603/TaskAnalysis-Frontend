@@ -7,7 +7,7 @@
 - **Duration:** about 5 months
 
 **Roles and Responsibilities:**
-As a Software Development Intern in the "Employee Investigation Software" project, your responsibilities include:
+As a Software Development Intern in the "Employee Investigation Software" project, my responsibilities include:
 1. **Developing Front-end:** Working on the user interface (UI) of the software using Vue.js, Tailwind CSS, HTML, and JavaScript to create an interactive and user-friendly experience.
 2. **Gathering Requirements:** Collaborating with clients to understand their needs and requirements for the software.
 3. **Contacting with Backend Team:** Coordinating with the backend development team to ensure seamless integration of front-end and back-end components.
